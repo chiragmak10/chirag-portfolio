@@ -1,8 +1,11 @@
+"use client";
+
 import { FloatingDock } from "@/components/ui/floating-dock";
 import { GlobeIcon, FileIcon, WindowIcon } from "@/components/ui/FloatingDockIcons";
 import { TextReveal } from "@/components/ui/TextReveal";
 import { BackgroundBeams } from "@/components/ui/BackgroundBeams";
 import Image from "next/image";
+import { Lens } from "@/components/ui/lens";
 
 export default function Home() {
   // Floating Dock items (replace hrefs with actual links)
@@ -30,6 +33,9 @@ export default function Home() {
       <section className="relative flex flex-col items-center justify-center min-h-[60vh] py-16">
         <BackgroundBeams />
         <div className="relative z-10 flex flex-col items-center">
+          <Lens zoomFactor={1.7} lensSize={180}>
+            <Image src="/assest/chirag.png" alt="Chirag" width={120} height={120} className="mb-6 rounded-full shadow-xl object-cover" />
+          </Lens>
           <Image src="/globe.svg" alt="Chirag Logo" width={64} height={64} className="mb-6 animate-spin-slow" />
           <TextReveal text="Hi, I&apos;m Chirag" className="text-4xl sm:text-6xl font-bold mb-4 text-center" />
           <p className="text-lg sm:text-2xl text-center max-w-xl mb-8">Frontend Developer specializing in <span className="font-semibold text-blue-600 dark:text-blue-400">React</span>, <span className="font-semibold text-sky-600 dark:text-sky-400">TypeScript</span>, <span className="font-semibold text-cyan-600 dark:text-cyan-400">Tailwind CSS</span>, and <span className="font-semibold text-emerald-600 dark:text-emerald-400">Data Visualization</span> with D3.</p>
@@ -91,6 +97,47 @@ export default function Home() {
             <h3 className="text-xl font-semibold mb-2">Portfolio Website</h3>
             <p className="text-sm mb-4">My personal portfolio built with Next.js, Tailwind CSS, and custom SVG micro-interactions. Optimized for performance and accessibility.</p>
             <a href="#" className="text-blue-600 dark:text-blue-400 font-medium group-hover:underline">View Project →</a>
+          </div>
+
+          {/* Mastery Project */}
+          <div className="bg-white dark:bg-neutral-800 rounded-xl shadow-lg p-6 flex flex-col sm:flex-row gap-6 hover:scale-[1.03] transition-transform group">
+            <div className="flex-1">
+              <h3 className="text-2xl font-bold mb-1">Mastery Project</h3>
+              <p className="font-semibold text-gray-500 mb-2">Technologies - React, Typescript, Graphql, HTML, CSS, Redux</p>
+              <ul className="list-disc list-inside text-gray-600 text-sm mb-2">
+                <li>Mastery is an end-to-end 3PL logistics management platform which facilitates broker with real-time tracking of vehicles, load management, incident management, invoice management, task management and delivery management. It also provides a transparent view to the retailer, vendor and the supplier.</li>
+                <li>Contributed to landing page & CRM</li>
+                <li>Contributed to development of employee tree</li>
+              </ul>
+            </div>
+            <div className="flex-shrink-0 flex items-center justify-center">
+              <Image src="/projects/mastery-project.png" alt="Mastery Project" width={180} height={120} className="rounded-lg shadow-md object-contain" />
+            </div>
+          </div>
+
+          {/* Chat-App Project */}
+          <div className="bg-white dark:bg-neutral-800 rounded-xl shadow-lg p-6 flex flex-col sm:flex-row gap-6 hover:scale-[1.03] transition-transform group">
+            <div className="flex-1">
+              <h3 className="text-2xl font-bold mb-1">Chat-App</h3>
+              <p className="font-semibold text-gray-500 mb-2">Technologies - Webflow, Figma</p>
+              <p className="text-gray-600 text-sm mb-2">Landing page design for chat app using webflow</p>
+              <a href="#" className="inline-block mt-2 px-6 py-2 border border-gray-400 rounded-full text-gray-700 font-semibold hover:bg-gray-100 transition">Check This out</a>
+            </div>
+            <div className="flex-shrink-0 flex items-center justify-center">
+              <Image src="/projects/chat-app.png" alt="Chat App" width={180} height={120} className="rounded-lg shadow-md object-contain" />
+            </div>
+          </div>
+
+          {/* NFT Landing Page Project */}
+          <div className="bg-white dark:bg-neutral-800 rounded-xl shadow-lg p-6 flex flex-col sm:flex-row gap-6 hover:scale-[1.03] transition-transform group">
+            <div className="flex-1">
+              <h3 className="text-2xl font-bold mb-1">Landing Page Design for NFT project</h3>
+              <p className="font-semibold text-gray-500 mb-2">Developed on webflow</p>
+              <a href="#" className="inline-block mt-2 px-6 py-2 border border-gray-400 rounded-full text-gray-700 font-semibold hover:bg-gray-100 transition">Check This out</a>
+            </div>
+            <div className="flex-shrink-0 flex items-center justify-center">
+              <Image src="/projects/nft-landing.png" alt="NFT Landing Page" width={180} height={120} className="rounded-lg shadow-md object-contain" />
+            </div>
           </div>
         </div>
       </section>
