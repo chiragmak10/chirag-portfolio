@@ -73,4 +73,18 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: AI Code Review (placeholder)
-        run: echo "Run open source AI code review tool here (e.g., CodeGPT, OSS Review Toolkit, or custom script)" 
+        run: echo "Run open source AI code review tool here (e.g., CodeGPT, OSS Review Toolkit, or custom script)"
+
+  playwright:
+    runs-on: ubuntu-latest
+    needs: [lint, prettier, typecheck]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm ci
+      - name: Install Playwright Browsers
+        run: npx playwright install --with-deps
+      - name: Run Playwright tests
+        run: npx playwright test 
