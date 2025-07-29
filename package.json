@@ -10,8 +10,10 @@
   },
   "dependencies": {
     "@tabler/icons-react": "^2.30.0",
+    "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
-    "framer-motion": "^12.19.3",
+    "framer-motion": "^12.23.11",
+    "lucide-react": "^0.533.0",
     "motion": "^10.18.0",
     "next": "15.3.4",
     "react": "18.2.0",
@@ -32,6 +34,7 @@
     "playwright": "^1.53.1",
     "prettier": "^3.6.2",
     "tailwindcss": "^4",
+    "tw-animate-css": "^1.3.6",
     "typescript": "^5"
   }
 }
