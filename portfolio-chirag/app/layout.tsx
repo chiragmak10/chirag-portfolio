@@ -24,8 +24,34 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  var theme = localStorage.getItem('theme');
+                  var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                  
+                  // Remove any existing dark class first
+                  document.documentElement.classList.remove('dark');
+                  
+                  if (theme === 'dark' || (!theme && prefersDark)) {
+                    document.documentElement.classList.add('dark');
+                  }
+                  
+                  // Dispatch a custom event to notify components that theme is initialized
+                  window.dispatchEvent(new CustomEvent('themeInitialized', { detail: { theme: theme || (prefersDark ? 'dark' : 'light') } }));
+                } catch (e) {
+                  console.log('Theme initialization error:', e);
+                }
+              })();
+            `,
+          }}
+        />
+      </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white dark:bg-gray-900 transition-colors duration-300`}
       >
         {children}
       </body>
