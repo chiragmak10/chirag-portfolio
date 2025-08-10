@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
-import ChiragIcon from './ChiragIcon';
 
 const Navbar: React.FC = () => {
   const [isDark, setIsDark] = useState(false);
@@ -74,8 +73,6 @@ const Navbar: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           
-         
-
           {/* Navigation Links */}
           <div className="hidden md:block">
             <div className="flex items-baseline space-x-8">
